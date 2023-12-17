@@ -154,7 +154,7 @@ class Chao:
 
     def desenhar(self, tela):
         tela.blit(self.IMAGEM, (self.x1, self.y))
-        tela.blit(self.IMAGEME, (self.x2, self.y))
+        tela.blit(self.IMAGEM, (self.x2, self.y))
 
 
 def desenhar_tela(tela, passaros, canos, chao, pontos):
@@ -165,8 +165,8 @@ def desenhar_tela(tela, passaros, canos, chao, pontos):
         cano.desenhar(tela)
 
 
-    texto = FONTE_PONTOS.render(f"Poontuação: {pontos}", 1, (255, 255, 255))
-    tela.blit(texto, (TELA_ALTURA - 10 - texto.get_width(), 10))
+    texto = FONTE_PONTOS.render(f"Pontuação: {pontos}", 1, (255, 255, 255))
+    tela.blit(texto, (TELA_LARGURA - 10 - texto.get_width(), 10))
     chao.desenhar(tela)
     pygame.display.update()
 
@@ -174,7 +174,7 @@ def main():
     passaros = [Passaro(230, 350)]
     chao = Chao(730)
     canos = [Cano(700)]
-    tela = pygame.display.set_mode(TELA_LARGURA, TELA_ALTURA)
+    tela = pygame.display.set_mode((TELA_LARGURA, TELA_ALTURA))
     pontos = 0
     relogio = pygame.time.Clock()
 
